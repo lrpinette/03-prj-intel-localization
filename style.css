@@ -1,0 +1,248 @@
+/* General Reset */
+body, h1, h2, h3, p, div, section, header {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Default text alignment */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  direction: ltr; /* Default to LTR */
+  text-align: left; /* Default text alignment */
+}
+
+/* Adjustments for RTL languages */
+body[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Header / Hero Section */
+header {
+  background: linear-gradient(to bottom, #0071c5, #005a9c);
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+header img {
+  max-width: 150px;
+  margin-bottom: 20px;
+  float: none; /* Remove float */
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: center; /* Ensure text is centered */
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+  text-align: center; /* Ensure text is centered */
+}
+
+/* Adjust card content alignment */
+section div {
+  text-align: right;
+}
+
+/* Adjust button alignment */
+a {
+  display: inline-block;
+  text-align: center;
+}
+
+/* Three-Column Section */
+section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+section p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+a.btn-primary {
+  background-color: #005a9c; /* Darker shade for better contrast */
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+a.btn-primary:hover {
+  background-color: #003f73; /* Even darker shade on hover */
+}
+
+/* Adjustments for RTL and LTR */
+body[dir="rtl"] header img {
+  float: right;
+}
+
+body[dir="ltr"] header img {
+  float: left; /* Default to LTR */
+}
+
+body[dir="rtl"] header h1, 
+body[dir="rtl"] header p, 
+body[dir="rtl"] section div {
+  text-align: right;
+}
+
+body[dir="ltr"] header h1, 
+body[dir="ltr"] header p, 
+body[dir="ltr"] section div {
+  text-align: left; /* Default to LTR */
+}
+
+/* Milestone Cards */
+.milestone-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.milestone-card:hover {
+  transform: translateY(-10px) scale(1.02); /* Slight lift and scale */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  background-color: #f9f9f9; /* Subtle background color change */
+}
+
+.milestone-card .card-title {
+  font-size: 1.8rem;
+  color: #0071c5;
+  margin-bottom: 10px;
+}
+
+.milestone-card .card-subtitle {
+  font-size: 1.2rem;
+  color: #005a9c;
+  margin-bottom: 15px;
+}
+
+/* Milestone Cards - Hide descriptions by default */
+.milestone-card .card-text {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+/* Show descriptions on hover */
+.milestone-card:hover .card-text {
+  opacity: 1;
+  max-height: 200px; /* Adjust based on expected content height */
+}
+
+.milestone-card .card-text {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.milestone-card img {
+  border-bottom: 2px solid #0071c5;
+  margin-bottom: 15px;
+}
+
+/* Scrollable Milestone Cards with Scroll Snap */
+.milestone-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory; /* Enable scroll snap */
+}
+
+.milestone-card {
+  flex: 0 0 300px;
+  scroll-snap-align: start; /* Snap each card to the start */
+}
+
+/* Custom Scrollbar */
+.milestone-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.milestone-container::-webkit-scrollbar-thumb {
+  background-color: #0071c5;
+  border-radius: 4px;
+}
+
+.milestone-container::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
+}
+
+/* Responsive Milestone Cards */
+@media (max-width: 768px) {
+  .milestone-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+  }
+
+  .milestone-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Hide subscription box titles */
+form .form-label {
+  display: none;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+footer a {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #66b2ff; /* Lighter blue for better contrast */
+}
+
+/* Modal Customization */
+.modal-content {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: #0071c5;
+  color: #fff;
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
